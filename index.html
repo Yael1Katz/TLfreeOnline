@@ -1,0 +1,321 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>TLfree - FREE Events In Tel-Aviv</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="google-site-verification" content="T99vGHQ28rQ0ldK5hzggZH_Xb9H7MtvvQekwaGl4M2s" />
+    <meta name="description" content="Free Events In Tel Aviv">
+    <meta name="keywords" content="free, events, tel aviv, tlv, tlfree">
+
+
+
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
+
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-database.js"></script>
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <link href="css/style.more.css" rel="stylesheet" type="text/css" />
+
+
+    <style>
+    </style>
+</head>
+
+<body>
+    <!-- Modal -->
+    <div class="modal fade" id="mapModal" role="dialog">
+        <!-- Modal content-->
+        <div class="modal-content-map">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <iframe id="googleMapsWindow" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.409451336641!2d34.790327385453736!3d32.08521782624389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4b93b59302cb%3A0x5bfa6aa1e6d6a001!2z157XqdeUINep16jXqiA3LCDXqtecINeQ15HXmdeRINeZ16TXlQ!5e0!3m2!1siw!2sil!4v1528795489843"
+                width="100%" height="95%" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="aboutModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">What's TLfree About</h3>
+                </div>
+                <div class="modal-body">
+                    <p>We started this website to promote
+                        <strong>FREE</strong> events and special meetups of Tel Aviv's best organizations and companies. Looking
+                        for an interesting event to attend after work? Enjoying mingling with other people? With TLfree you'll
+                        be able to find a wide variety of
+                        <strong>FREE</strong> events from across the city. Please contact us for any comments or remarks at:
+                        <a href="mailto:tlfreeonline@gmail.com">
+                            <strong>tlfreeonline@gmail.com</strong>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" id="back-to-top" title="Back to top">&uarr;</a>
+    <header class="header-top">
+        <div class="wrap">
+            <div class="center">
+                <a href="index.html" class="logo1">
+                    <img width="280px" height="120px" src="images/logo_transparent.png" alt=""/>
+                </a>
+            </div>
+
+            <!--
+            <div class="cssmenu">
+                <nav id="nav" role="navigation">
+                    <a href="#nav" title="Show navigation">Show navigation</a>
+                    <a href="#" title="Hide navigation">Hide navigation</a>
+                    <ul class="clearfix">
+                        
+                        <li class="active">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="start.html">
+                                <span>Get Started</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="work.html">
+                                <span>How it Works</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="pricing.html">Pricing</a>
+                        </li>
+                        <li>
+                            <a href="support.html">Support</a>
+                        </li>
+                        <div class="clear"></div>
+                        
+                    </ul>
+                </nav>
+            </div>
+            -->
+            <div class="buttons">
+                <!--
+                <div class="login_btn">
+                    <a href="login.html">Login / Signup</a>
+                </div>
+                -->
+                <!--
+                <div class="get_btn">
+                    <a href="start.html">Get Listed Today</a>
+                </div>
+                -->
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+            <h2 class="head">Find the
+                <span class="m_1">next event </span>You'll want
+                <span class="m_1">to attend</span>
+            </h2>
+        </div>
+    </header>
+    <!--
+    <div class="map">
+        <img src="images/map.jpg" alt="" />
+    </div>
+    -->
+    <div class="content-box">
+        <div id="snackbar">
+            <a href="#" class="closeGooglePlay" data-dismiss="alert" aria-label="close" onClick="googlePlayCloseButtonClicked(this)">&times;</a>
+            <img width="140" src="images/getItOnGooglePlay.png" onclick="window.open('https://play.google.com/store/apps/details?id=com.omeric.android.tlfree', '_blank');googlePlayCloseButtonClicked(this);"
+            />
+        </div>
+        <div class="wrap">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                Filters
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse">
+                        <div class="panel-body">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-box-right">
+                <div class="form-group row">
+                    <div class="col-md-5">
+                        <div class="btn-group">
+                            <input id="searchinput" type="search" placeholder="Search..." class="form-control" onkeyup="filterChanged()">
+                            <span id="searchclear" class="glyphicon glyphicon-remove-circle"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input class="form-control dateclass placeholderclass" id="calendar" placeholder="Select date..." type="date" onchange="filterChanged()"
+                                    onClick="$(this).removeClass('placeholderclass')">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label>Sort:</label>
+                                <select class="form-control" style="display: inline-block;width:auto;" onchange="sortChanged(this)">
+                                    <option>Date</option>
+                                    <option>Publish</option>
+                                    <option>Distance</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="labelsGroup">
+                            <label class="btn myBtn" title="Great Content">
+                                <img src="images/hq.png" class="img-thumbnail img-check imgCheckbox" id="chkHQ">
+                            </label>
+                            <label class="btn myBtn" title="Food & Drinks">
+                                <img src="images/food.png" class="img-thumbnail img-check imgCheckbox" id="chkFood">
+                            </label>
+                            <label class="btn myBtn" title="90% Discount">
+                                <img src="images/ic_90_percent_discount.png" class="img-thumbnail img-check imgCheckbox" id="chk90">
+                            </label>
+                            <label class="btn myBtn" title="Editor's Choice">
+                                <img src="images/ic_editors_choice.png" class="img-thumbnail img-check imgCheckbox" id="chkEditorChoice">
+                            </label>
+                            <label class="btn myBtn">
+                                <div class="img-thumbnail img-check imgCheckbox" id="chkAll" style="cursor: pointer;border-color: black;opacity: 1;">All</div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul class="events">
+                <li class="active">
+                    <a href="" onclick="eventsTab();return false;">Events</a>
+                </li>
+                <li>
+                    <a href="" onclick="favoritesTab();return false;">Favorites</a>
+                </li>
+                <li>
+                    <a href="" onclick="mapTab();return false;">Map</a>
+                </li>
+                <li>
+                    <a href="" onclick="photosTab();return false;">Photos</a>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <main class="main">
+
+        <!--<div id="myModal" class="modal-map">
+            <div class="modal-content-map">
+                <span class="close">&times;</span>
+                <iframe id="googleMapsWindow" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.409451336641!2d34.790327385453736!3d32.08521782624389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4b93b59302cb%3A0x5bfa6aa1e6d6a001!2z157XqdeUINep16jXqiA3LCDXqtecINeQ15HXmdeRINeZ16TXlQ!5e0!3m2!1siw!2sil!4v1528795489843"
+                    width="100%" height="95%" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>-->
+
+
+
+
+
+        <div class="wrap">
+
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="wrap">
+            <div class="footer-menu">
+                <ul>
+                    <li>
+                        <a rel="no-refresh" href="#" data-toggle="modal" data-target="#aboutModal">About Us</a>
+                    </li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <div class="social">
+                    <ul>
+                        <li>
+                            <a href="https://play.google.com/store/apps/details?id=com.omeric.android.tlfree" target="_blank">
+                                <img src="images/googleplay.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/tlfreenow/" target="_blank">
+                                <img src="images/instagram.png" />
+                            </a>
+                        </li>
+                        <!--
+                        <li class="facebook">
+                            <a href="https://www.facebook.com/TLfree-196181621210411/">
+                                <span> </span>
+                            </a>
+                        </li>
+                        <li class="twitter">
+                            <a href="#">
+                                <span> </span>
+                            </a>
+                        </li>
+                        <li class="linked">
+                            <a href="#">
+                                <span> </span>
+                            </a>
+                        </li>
+                        <li class="arrow">
+                            <a href="#">
+                                <span> </span>
+                            </a>
+                        </li>
+                        <li class="dot">
+                            <a href="#">
+                                <span> </span>
+                            </a>
+                        </li>
+                        <li class="rss">
+                            <a href="#">
+                                <span> </span>
+                            </a>
+                        </li>
+                        -->
+                    </ul>
+                </div>
+
+                <div class="copy">
+                    <p>© 2018 TLfree. All rights reserved </p>
+                </div>
+                <div class="clear"></div>
+
+            </div>
+
+        </div>
+    </footer>
+
+
+    <script type="text/javascript" src="js/tlfree.js"></script>
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBJYQtdjzLH6v4_bftrBdwT1VgNYxrVrs&libraries=places&callback=initMap"
+        type="text/javascript"></script> -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdZD0Rsf1mCKYSh1Xu9I1d3uNIZM2hNEo"></script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+
+</html>

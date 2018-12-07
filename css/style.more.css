@@ -1,0 +1,367 @@
+#mapModal{
+    margin-top: 20px;
+}
+.modal-header{
+    background: #f4f4f4;
+}
+.modal-content{
+    border-radius: 0px;
+}
+.rtl{
+    direction: rtl;
+}
+.modal-body p{
+    font-size: large;
+    color: #555;
+}
+.modal-title{
+    color: #444;
+    font-weight: bold;
+}
+#back-to-top {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 30px;
+    background: lightgray;
+    color: #444;
+    cursor: pointer;
+    border: 0;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: opacity 0.2s ease-out;
+    opacity: 0;
+}
+
+#back-to-top:hover {
+    background: #e9ebec;
+}
+
+#back-to-top.show {
+    opacity: 1;
+}
+
+.panel-group .panel {
+    margin-top: 10px;
+}
+
+.head {
+    margin-bottom: 0px;
+}
+
+.closeGooglePlay {
+    float: right;
+    font-size: 25px;
+    color: white;
+    opacity: 0.7;
+    margin-top: 5px;
+    margin-right: 13px;
+    font-weight: 200;
+}
+
+#snackbar {
+    /*visibility: hidden;*/
+    display: none;
+    background-color: black;
+    opacity: 0.6;
+}
+
+#snackbar.show {
+    /*visibility: visible;*/
+    display: block;
+}
+
+#snackbar.hide {
+    /*visibility: collapse;*/
+    display: none;
+}
+
+#sharePopup a:focus,
+a:hover {
+    text-decoration: none;
+}
+
+.fa {
+    padding: 10px;
+    font-size: 30px;
+    width: 52px;
+    text-align: center;
+    /*margin-left: -4.5px;*/
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-whatsapp {
+    background: #39e329;
+    color: white;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+/* Popup container - can be anything you want */
+
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* The actual popup */
+
+.popup .popuptext {
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -77px;
+    width: 153px;
+}
+
+/* Popup arrow */
+
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #3B5998 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.transparentbutton {
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    background-image: url("images//map.png");
+}
+
+.panel-heading .accordion-toggle:after {
+    /* symbol for "opening" panels */
+    font-family: 'Glyphicons Halflings';
+    /* essential for enabling glyphicon */
+    content: "\e114";
+    /* adjust as needed, taken from bootstrap.css */
+    float: right;
+    /* adjust as needed */
+    color: grey;
+    /* adjust as needed */
+}
+
+.panel-heading .accordion-toggle.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\e080";
+    /* adjust as needed, taken from bootstrap.css */
+}
+
+#accordion {
+    display: none;
+}
+
+div[class='col_1_of_3 span_1_of_3'] a img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+div[class='col_1_of_3'] a img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+div[class='col_1_of_4 span_1_of_4'] a img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+div[class='col_1_of_4'] a img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.span_1_of_4 {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: #fff;
+}
+
+.imgCheckbox {
+    opacity: 0.5;
+    width: 33px;
+    height: 33px;
+}
+
+.check {
+    opacity: 1;
+    border-color: black;
+    background-color: lightgray;
+}
+
+.myBtn {
+    padding: 0;
+}
+
+.dateclass {
+    width: 100%;
+}
+
+.dateclass.placeholderclass::before {
+    width: 100%;
+    content: attr(placeholder);
+}
+
+.dateclass.placeholderclass:hover::before {
+    width: 0%;
+    content: "";
+}
+
+.btn-group {
+    display: block;
+}
+
+#searchinput {
+    width: 100%;
+}
+
+#searchclear {
+    position: absolute;
+    right: 5px;
+    top: 0;
+    bottom: 0;
+    height: 14px;
+    margin: auto;
+    font-size: 14px;
+    cursor: pointer;
+    color: #ccc;
+}
+
+#map {
+    height: 90%;
+    width: 100%;
+}
+
+i {
+    background: white;
+    border-radius: 20px;
+    font-size: 20px;
+    text-align: center;
+    /*margin-right: 10px;*/
+    border-radius: 50%;
+    display: inline-block;
+    padding: 5px;
+    border: solid lightgray 1.4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+i img {
+    opacity: 0.6;
+}
+
+.star {
+    font-size: 25px;
+    color: gold;
+}
+
+span.m_22.favorite {
+    margin: -5px 0px 0px 2px;
+}
+
+.eventGUID {
+    display: none;
+}
+
+/* Modal Content */
+
+.modal-content-map {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 95%;
+    height: 95%;
+}
+
+/* The Close Button */
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
